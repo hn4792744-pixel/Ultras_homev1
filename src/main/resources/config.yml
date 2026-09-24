@@ -1,0 +1,179 @@
+# ==================================================
+# UltrasCore - config.yml
+# كل نظام يمكن تعطيله بالكامل من هنا. عند false: لا يعمل، لا تظهر أوامره ولا واجهاته.
+# ==================================================
+
+language: en   # en أو ar
+
+server:
+  name: "ULTRAS MC"          # اسم السيرفر يظهر في الإعلانات والرسائل
+  prefix: "<gradient:#ff0000:#8a0000>ULTRAS</gradient> <dark_gray>|</dark_gray>"   # بادئة الشات (MiniMessage)
+
+storage:
+  type: YAML        # YAML أو SQLITE
+
+debug: false        # طباعة معلومات تصحيح إضافية في الكونسول
+
+logs:
+  enabled: true
+  tpa: true
+  homes: true
+  errors: true
+
+systems:
+  tpa:
+    enabled: true               # تفعيل/تعطيل نظام TPA بالكامل
+    teleport-delay-seconds: 3   # مدة العد التنازلي قبل النقل
+    cooldown-seconds: 60        # مدة الانتظار بعد نقل ناجح
+    cancel-on-move: true        # إلغاء النقل إذا تحرك اللاعب
+    request-expire-seconds: 60  # مدة صلاحية الطلب قبل انتهائه تلقائيًا
+    gui:
+      players-per-page: 28
+    sounds:
+      enabled: true
+      request: ENTITY_EXPERIENCE_ORB_PICKUP
+      accept: ENTITY_PLAYER_LEVELUP
+      teleport-success: ENTITY_ENDERMAN_TELEPORT
+
+  homes:
+    enabled: true
+    default-limit: 3            # عدد الـ Homes الافتراضي للاعب العادي
+    op-limit: 20                # عدد الـ Homes للاعب OP
+    teleport-delay-seconds: 3
+    cooldown-seconds: 60
+    cancel-on-move: true
+    gui:
+      homes-per-page: 10
+    sounds:
+      enabled: true
+      teleport-success: ENTITY_ENDERMAN_TELEPORT
+      set-home: ENTITY_PLAYER_LEVELUP
+      delete-home: ENTITY_ITEM_BREAK
+
+  rtp:
+    enabled: true
+    teleport-delay-seconds: 3
+    cooldown-seconds: 60
+    cancel-on-move: true
+    min-radius: 200
+    max-radius: 5000
+    attempts: 30                 # عدد محاولات إيجاد مكان آمن قبل الاستسلام
+    worlds:                      # العوالم المسموح استخدام /rtp فيها (بدون تحديد عالم)
+      - world
+    allowed-command-worlds:      # العوالم المسموح تنفيذ الأمر بها أصلًا (مثل: من داخل world أو spawn فقط)
+      - world
+      - spawn
+    sounds:
+      enabled: true
+      rtp-success: ENTITY_ENDERMAN_TELEPORT
+
+  warps:
+    enabled: true
+    teleport-delay-seconds: 3
+    cooldown-seconds: 60
+    cancel-on-move: true
+    gui:
+      warps-per-page: 28
+    sounds:
+      enabled: true
+      warp-open: BLOCK_CHEST_OPEN
+      teleport-success: ENTITY_ENDERMAN_TELEPORT
+
+  spawn:
+    enabled: true
+    death-teleport: true         # نقل اللاعب لـ Spawn عند الموت
+    teleport-delay-seconds: 0
+    sounds:
+      enabled: true
+      teleport-success: ENTITY_ENDERMAN_TELEPORT
+
+  settings:
+    enabled: true                # نظام /setting و/settings (الإعدادات الشخصية للاعب)
+    per-page: 36
+
+  chat:
+    enabled: true                # السماح للاعبين بتعطيل استقبال الشات عبر /chat
+
+  pm:
+    enabled: true                # الرسائل الخاصة /msg /tell /w /whisper
+
+  broadcast:
+    enabled: true
+    default-duration-seconds: 3
+    default-locations: [CHAT]    # أي مزيج من: CHAT, TITLE, ACTIONBAR, BOSSBAR
+    sound: ENTITY_EXPERIENCE_ORB_PICKUP
+
+  announcements:
+    enabled: false                # إعلانات تلقائية دورية (اختياري)
+    interval-seconds: 900
+    locations: [CHAT]
+    messages:
+      - "<gradient:#ff0000:#8a0000>ULTRAS MC</gradient> <gray>— هذا مثال على إعلان دوري، عدّله من config.yml"
+
+  join-leave:
+    enabled: true                 # رسائل الدخول/الخروج (تُرسل فقط لمن لم يعطّلها من /setting)
+    sound: ENTITY_EXPERIENCE_ORB_PICKUP
+
+  death-messages:
+    enabled: true                 # رسائل الموت الافتراضية من Minecraft (تُرسل فقط لمن لم يعطّلها)
+    sound: ENTITY_PLAYER_DEATH
+
+  visibility:
+    enabled: true                 # نظام /hide لإخفاء اللاعبين
+    hide-op: false                # هل يتم إخفاء اللاعبين OP أيضًا عند التفعيل
+    same-world-only: false        # إخفاء اللاعبين في نفس العالم فقط (لا يؤثر على عوالم أخرى)
+    worlds-whitelist: []          # فارغة = كل العوالم مسموحة
+    worlds-blacklist: []
+
+  names:
+    enabled: true                 # /names on|off — إخفاء أسماء اللاعبين فوق رؤوسهم لمن يفعّل هذا
+
+  ranks:
+    enabled: true                 # /ranks on|off — يعتمد على names (لا يعمل إذا كانت الأسماء معطلة)
+
+  nightvision:
+    enabled: true                 # /nv on|off
+
+  scoreboard:
+    enabled: false                # UltrasCore لا يبني Scoreboard خاص به في هذه المرحلة؛ هذا مجرد Guard flag
+    force-disable-if-tab-plugin: true
+
+  tab:
+    enable-tab-features: false    # اترك false إذا يوجد Plugin تاب خارجي (مثل TAB) يدير التاب لست
+
+  hub:
+    enabled: true
+    mode: LOCAL                   # LOCAL = نفس السيرفر، PROXY = سيرفر آخر خلف البروكسي
+    proxy-server-name: "hub"      # اسم السيرفر المسجل بإعدادات Velocity/BungeeCord (يُستخدم فقط إذا mode=PROXY)
+    teleport-delay-seconds: 0
+    join-teleport: false          # نقل اللاعب للـ Hub تلقائيًا عند دخوله (LOCAL فقط)
+
+  proxy:
+    enabled: false                 # فعّله فقط إذا السيرفر خلف Velocity أو BungeeCord
+    type: velocity                 # velocity أو bungeecord (معلوماتي — القناة المستخدمة واحدة لكليهما)
+
+  backups:
+    enabled: true                  # نسخ احتياطي لملفات config.yml/warps.yml/spawn.yml عند كل /ultrascore reload
+    keep: 10                       # عدد النسخ المحتفظ بها لكل ملف
+
+commands:
+  tpa: true
+  tpahere: true
+  homes: true
+  home: true
+  sethome: true
+  delhome: true
+  rtp: true
+  warp: true
+  setspawn: true
+  spawn: true
+  setting: true
+  chat: true
+  msg: true
+  bc: true
+  hide: true
+  names: true
+  ranks: true
+  nv: true
+  hub: true
+  sethub: true

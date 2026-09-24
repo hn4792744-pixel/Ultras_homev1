@@ -1,0 +1,35 @@
+# Example custom GUI, loaded from plugins/UltrasCore/settings/main.yml
+# Open it with: /setting main
+# See README "Custom Settings GUI" for the full button schema.
+gui:
+  title: "<gradient:#ff0000:#8a0000>ULTRAS</gradient> Menu"
+  size: 27
+
+buttons:
+  my_settings:
+    slot: 11
+    material: COMPARATOR
+    name: "<white>My Settings"
+    lore:
+      - "<gray>Open the full settings list"
+    action: open_settings
+    sound: UI_BUTTON_CLICK
+    enabled: true
+  homes:
+    slot: 13
+    material: RED_BED
+    name: "<white>My Homes"
+    lore:
+      - "<gray>Open the Homes menu"
+    command: "homes"
+    sound: UI_BUTTON_CLICK
+    enabled: true
+  warps:
+    slot: 15
+    material: ENDER_PEARL
+    name: "<white>Warps"
+    lore:
+      - "<gray>Open the Warps menu"
+    command: "warp"
+    sound: UI_BUTTON_CLICK
+    enabled: true

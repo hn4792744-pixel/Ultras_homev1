@@ -1,0 +1,117 @@
+general:
+  no-permission: "<red>ليس لديك صلاحية لفعل ذلك."
+  player-only: "<red>هذا الأمر متاح للاعبين فقط."
+  player-not-found: "<red>اللاعب غير موجود."
+  invalid-args: "<red>معطيات غير صحيحة. الاستخدام: <white>{usage}"
+  reload-success: "<green>تم إعادة تحميل UltrasCore بنجاح."
+  system-disabled: "<red>هذا النظام معطل حاليًا."
+
+tpa:
+  sent: "<yellow>تم إرسال طلب الانتقال إلى <white>{player}<yellow>."
+  received: "<yellow><white>{player}<yellow> يريد الانتقال إليك. <green>[قبول]</green> <red>[رفض]</red>"
+  received-here: "<yellow><white>{player}<yellow> يريدك أن تنتقل إليه. <green>[قبول]</green> <red>[رفض]</red>"
+  accepted: "<green>{player} قبل طلب الانتقال."
+  denied: "<red>{player} رفض طلب الانتقال."
+  cancelled: "<gray>تم إلغاء طلب الانتقال."
+  none-pending: "<red>لا يوجد لديك طلبات انتقال معلّقة."
+  expired: "<gray>انتهت صلاحية طلب الانتقال إلى {player}."
+  teleporting-in: "<yellow>سيتم النقل خلال <white>{seconds} ثانية<yellow>. لا تتحرك!"
+  teleport-cancelled-move: "<red>تم إلغاء النقل — لقد تحركت."
+  cooldown: "<red>يجب الانتظار <white>{seconds} ثانية<red> قبل الانتقال مرة أخرى."
+  toggled-off: "<gray>لن تستقبل طلبات الانتقال بعد الآن."
+  toggled-on: "<gray>ستستقبل طلبات الانتقال الآن."
+  gui-title: "الانتقال إلى لاعب"
+
+homes:
+  set: "<green>تم تعيين المنزل <white>{name}<green>."
+  deleted: "<green>تم حذف المنزل <white>{name}<green>."
+  not-found: "<red>ليس لديك منزل باسم <white>{name}<red>."
+  limit-reached: "<red>لقد وصلت للحد الأقصى من المنازل ({limit})."
+  list-header: "<gold>منازلك:"
+  teleporting: "<yellow>سيتم النقل للمنزل خلال <white>{seconds} ثانية<yellow>. لا تتحرك!"
+  gui-title: "منازلك"
+  admin-gui-title: "منازل {player}"
+
+rtp:
+  searching: "<yellow>جاري البحث عن مكان آمن..."
+  teleporting-in: "<yellow>سيتم النقل خلال <white>{seconds} ثانية<yellow>. لا تتحرك!"
+  success: "<green>تم نقلك إلى مكان عشوائي."
+  no-safe-location: "<red>تعذّر إيجاد مكان آمن، حاول مرة أخرى."
+  cooldown: "<red>يجب الانتظار <white>{seconds} ثانية<red> قبل استخدام RTP مرة أخرى."
+  world-not-allowed: "<red>RTP غير مسموح في هذا العالم."
+  command-world-not-allowed: "<red>لا يمكنك استخدام /rtp من عالمك الحالي."
+  reload-success: "<green>تم إعادة تحميل إعدادات RTP."
+
+warps:
+  created: "<green>تم إنشاء الـ Warp <white>{warp}<green>."
+  updated: "<green>تم تحديث موقع الـ Warp <white>{warp}<green>."
+  removed: "<green>تم حذف الـ Warp <white>{warp}<green>."
+  not-found: "<red>الـ Warp <white>{warp}<red> غير موجود."
+  already-exists: "<red>يوجد Warp باسم <white>{warp}<red> مسبقًا."
+  teleporting: "<yellow>جاري النقل إلى <white>{warp}<yellow> خلال <white>{seconds} ثانية<yellow>. لا تتحرك!"
+  no-access: "<red>ليس لديك صلاحية الوصول لهذا الـ Warp."
+  enter-password: "<yellow>اكتب كلمة المرور لـ <white>{warp}<yellow> في الشات (بدون /):"
+  wrong-password: "<red>كلمة المرور غير صحيحة."
+  password-set: "<green>تم تعيين كلمة المرور للـ Warp <white>{warp}<green>."
+  password-removed: "<green>تم إزالة كلمة المرور من الـ Warp <white>{warp}<green>."
+  now-public: "<green>الـ Warp <white>{warp}<green> أصبح عام الآن."
+  now-private: "<green>الـ Warp <white>{warp}<green> أصبح خاص الآن."
+  member-added: "<green>تم إضافة <white>{player}<green> إلى الـ Warp <white>{warp}<green>."
+  member-removed: "<green>تم إزالة <white>{player}<green> من الـ Warp <white>{warp}<green>."
+  list-header: "<gold>الـ Warps:"
+  members-header: "<gold>أعضاء {warp}:"
+  gui-title: "الـ Warps"
+  cooldown: "<red>يجب الانتظار <white>{seconds} ثانية<red> قبل استخدام Warp مرة أخرى."
+
+spawn:
+  set: "<green>تم تعيين نقطة الـ Spawn."
+  not-set: "<red>لم يتم تعيين الـ Spawn بعد."
+  teleported: "<green>تم نقلك إلى الـ Spawn."
+
+settings:
+  gui-title: "الإعدادات"
+  toggled-on: "<green>تم تفعيل {setting}."
+  toggled-off: "<red>تم تعطيل {setting}."
+
+chat:
+  muted: "<gray>لن ترى رسائل الشات بعد الآن."
+  unmuted: "<gray>ستشاهد رسائل الشات الآن."
+
+pm:
+  sent: "<gray>[<white>أنا <gray>-> <white>{player}<gray>] <white>{message}"
+  received: "<gray>[<white>{player} <gray>-> <white>أنا<gray>] <white>{message}"
+  target-disabled: "<red>هذا اللاعب معطل للرسائل الخاصة."
+  self: "<red>لا يمكنك مراسلة نفسك."
+  toggled-on: "<gray>ستستقبل الرسائل الخاصة الآن."
+  toggled-off: "<gray>لن تستقبل الرسائل الخاصة بعد الآن."
+  no-target: "<red>الاستخدام: /msg <player> <message>"
+
+broadcast:
+  usage: "<red>الاستخدام: /bc <message>"
+
+messages:
+  join: "<green>+ <white>{player} <gray>انضم إلى السيرفر"
+  leave: "<red>- <white>{player} <gray>غادر السيرفر"
+
+visibility:
+  hiding: "<gray>أنت الآن تخفي اللاعبين الآخرين."
+  showing: "<gray>أصبحت ترى اللاعبين الآخرين مرة أخرى."
+
+names:
+  shown: "<gray>أسماء اللاعبين ظاهرة الآن."
+  hidden: "<gray>أسماء اللاعبين مخفية الآن."
+
+ranks:
+  shown: "<gray>رتب اللاعبين ظاهرة الآن."
+  hidden: "<gray>رتب اللاعبين مخفية الآن."
+  blocked-by-names: "<red>أنت قمت بتعطيل أسماء اللاعبين والمعلومات بالكامل."
+
+nightvision:
+  on: "<green>الرؤية الليلية: مفعّلة"
+  off: "<red>الرؤية الليلية: معطّلة"
+
+hub:
+  set: "<green>تم تعيين موقع الـ Hub."
+  not-set: "<red>لم يتم تعيين الـ Hub بعد."
+  teleporting: "<yellow>جاري النقل إلى الـ Hub..."
+  teleporting-proxy: "<yellow>جاري نقلك لسيرفر الـ Hub..."

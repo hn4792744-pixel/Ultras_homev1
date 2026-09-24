@@ -1,0 +1,117 @@
+general:
+  no-permission: "<red>You don't have permission to do that."
+  player-only: "<red>Only players can use this command."
+  player-not-found: "<red>Player not found."
+  invalid-args: "<red>Invalid arguments. Usage: <white>{usage}"
+  reload-success: "<green>UltrasCore has been reloaded."
+  system-disabled: "<red>This system is currently disabled."
+
+tpa:
+  sent: "<yellow>Teleport request sent to <white>{player}<yellow>."
+  received: "<yellow><white>{player}<yellow> wants to teleport to you. <green>[Accept]</green> <red>[Deny]</red>"
+  received-here: "<yellow><white>{player}<yellow> wants you to teleport to them. <green>[Accept]</green> <red>[Deny]</red>"
+  accepted: "<green>{player} accepted your teleport request."
+  denied: "<red>{player} denied your teleport request."
+  cancelled: "<gray>Teleport request cancelled."
+  none-pending: "<red>You have no pending teleport requests."
+  expired: "<gray>Your teleport request to {player} has expired."
+  teleporting-in: "<yellow>Teleporting in <white>{seconds}s<yellow>. Don't move!"
+  teleport-cancelled-move: "<red>Teleport cancelled — you moved."
+  cooldown: "<red>You must wait <white>{seconds}s<red> before teleporting again."
+  toggled-off: "<gray>You will no longer receive teleport requests."
+  toggled-on: "<gray>You will now receive teleport requests."
+  gui-title: "Teleport to a player"
+
+homes:
+  set: "<green>Home <white>{name}<green> has been set."
+  deleted: "<green>Home <white>{name}<green> has been deleted."
+  not-found: "<red>You don't have a home named <white>{name}<red>."
+  limit-reached: "<red>You've reached your home limit ({limit})."
+  list-header: "<gold>Your homes:"
+  teleporting: "<yellow>Teleporting home in <white>{seconds}s<yellow>. Don't move!"
+  gui-title: "Your Homes"
+  admin-gui-title: "{player}'s Homes"
+
+rtp:
+  searching: "<yellow>Searching for a safe location..."
+  teleporting-in: "<yellow>Teleporting in <white>{seconds}s<yellow>. Don't move!"
+  success: "<green>Teleported to a random location."
+  no-safe-location: "<red>Couldn't find a safe location, please try again."
+  cooldown: "<red>You must wait <white>{seconds}s<red> before using RTP again."
+  world-not-allowed: "<red>RTP isn't allowed in this world."
+  command-world-not-allowed: "<red>You can't use /rtp from your current world."
+  reload-success: "<green>RTP configuration reloaded."
+
+warps:
+  created: "<green>Warp <white>{warp}<green> has been created."
+  updated: "<green>Warp <white>{warp}<green>'s location has been updated."
+  removed: "<green>Warp <white>{warp}<green> has been removed."
+  not-found: "<red>Warp <white>{warp}<red> doesn't exist."
+  already-exists: "<red>A warp named <white>{warp}<red> already exists."
+  teleporting: "<yellow>Warping to <white>{warp}<yellow> in <white>{seconds}s<yellow>. Don't move!"
+  no-access: "<red>You don't have access to this warp."
+  enter-password: "<yellow>Type the password for <white>{warp}<yellow> in chat (no slash):"
+  wrong-password: "<red>Incorrect password."
+  password-set: "<green>Password set for warp <white>{warp}<green>."
+  password-removed: "<green>Password removed from warp <white>{warp}<green>."
+  now-public: "<green>Warp <white>{warp}<green> is now public."
+  now-private: "<green>Warp <white>{warp}<green> is now private."
+  member-added: "<green>Added <white>{player}<green> to warp <white>{warp}<green>."
+  member-removed: "<green>Removed <white>{player}<green> from warp <white>{warp}<green>."
+  list-header: "<gold>Warps:"
+  members-header: "<gold>Members of {warp}:"
+  gui-title: "Warps"
+  cooldown: "<red>You must wait <white>{seconds}s<red> before warping again."
+
+spawn:
+  set: "<green>Spawn point has been set."
+  not-set: "<red>Spawn hasn't been set yet."
+  teleported: "<green>Teleported to spawn."
+
+settings:
+  gui-title: "Settings"
+  toggled-on: "<green>{setting} enabled."
+  toggled-off: "<red>{setting} disabled."
+
+chat:
+  muted: "<gray>You will no longer see chat messages."
+  unmuted: "<gray>You will now see chat messages."
+
+pm:
+  sent: "<gray>[<white>me <gray>-> <white>{player}<gray>] <white>{message}"
+  received: "<gray>[<white>{player} <gray>-> <white>me<gray>] <white>{message}"
+  target-disabled: "<red>That player has private messages disabled."
+  self: "<red>You can't message yourself."
+  toggled-on: "<gray>You will now receive private messages."
+  toggled-off: "<gray>You will no longer receive private messages."
+  no-target: "<red>Usage: /msg <player> <message>"
+
+broadcast:
+  usage: "<red>Usage: /bc <message>"
+
+messages:
+  join: "<green>+ <white>{player} <gray>joined the server"
+  leave: "<red>- <white>{player} <gray>left the server"
+
+visibility:
+  hiding: "<gray>You are now hiding other players."
+  showing: "<gray>You can now see other players again."
+
+names:
+  shown: "<gray>Player names are now shown."
+  hidden: "<gray>Player names are now hidden."
+
+ranks:
+  shown: "<gray>Player ranks are now shown."
+  hidden: "<gray>Player ranks are now hidden."
+  blocked-by-names: "<red>You've disabled player names and info entirely, so ranks are already hidden."
+
+nightvision:
+  on: "<green>Night Vision: ON"
+  off: "<red>Night Vision: OFF"
+
+hub:
+  set: "<green>Hub location has been set."
+  not-set: "<red>Hub hasn't been set yet."
+  teleporting: "<yellow>Teleporting to the hub..."
+  teleporting-proxy: "<yellow>Sending you to the hub server..."

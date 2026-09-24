@@ -1,0 +1,140 @@
+name: UltrasCore
+version: ${project.version}
+main: com.ultrascore.core.UltrasCore
+api-version: '1.21'
+author: Hussein
+description: ULTRAS MC — professional modular server core (TPA, RTP, Homes, Warps, Hub, GUI, Settings)
+softdepend: [PlaceholderAPI, Geyser-Spigot, floodgate]
+
+commands:
+  ultrascore:
+    description: Main UltrasCore admin command (help/reload)
+    permission: ultrascore.admin
+    aliases: [uc]
+  tpa:
+    description: Teleport request system
+    aliases: [teleportrequest]
+  tpahere:
+    description: Teleport-here request
+  uc_tpa:
+    description: TPA help/reload
+  home:
+    description: Teleport to one of your homes
+  homes:
+    description: Open the Homes GUI
+  sethome:
+    description: Set a home at your current location
+  delhome:
+    description: Delete a home
+  home_admin:
+    description: View another player's homes
+    permission: ultrascore.homes.admin
+  uc_home:
+    description: Admin home-limit management
+    permission: ultrascore.homes.admin
+  rtp:
+    description: Teleport to a random safe location
+  warp:
+    description: Warp system (create/remove/list/teleport)
+  setspawn:
+    description: Set the global spawn point
+    permission: ultrascore.spawn.admin
+  spawn:
+    description: Teleport to spawn
+  setting:
+    description: Open your personal settings GUI
+    aliases: [settings]
+  chat:
+    description: Toggle receiving chat messages
+  msg:
+    description: Send a private message
+    aliases: [tell, w, whisper]
+  bc:
+    description: Broadcast a message to the server
+    aliases: [broadcast]
+    permission: ultrascore.broadcast
+  hide:
+    description: Toggle hiding other players
+    aliases: [hideplayers, showplayers]
+  names:
+    description: Toggle player names shown above heads
+  ranks:
+    description: Toggle player rank prefixes shown above heads
+  nv:
+    description: Toggle night vision
+  hub:
+    description: Teleport to the server hub (local or via proxy)
+  sethub:
+    description: Set the hub location (local mode only)
+    permission: ultrascore.hub.admin
+
+permissions:
+  ultrascore.admin:
+    description: Full admin access to UltrasCore
+    default: op
+  ultrascore.homes.admin:
+    description: Manage other players' homes
+    default: op
+  ultrascore.homes.bypass:
+    description: Bypass home limits, delay and cooldown
+    default: op
+  ultrascore.tpa.bypass:
+    description: Bypass TPA delay and cooldown
+    default: op
+  ultrascore.tpa.use:
+    description: Use the TPA system
+    default: true
+  ultrascore.homes.use:
+    description: Use the Homes system
+    default: true
+  ultrascore.rtp.use:
+    description: Use /rtp
+    default: true
+  ultrascore.rtp.bypass:
+    description: Bypass RTP delay and cooldown
+    default: op
+  ultrascore.warp.use:
+    description: Use /warp to teleport to warps
+    default: true
+  ultrascore.warp.admin:
+    description: Create, remove and manage warps
+    default: op
+  ultrascore.warp.bypass:
+    description: Bypass warp delay, cooldown and password/private checks
+    default: op
+  ultrascore.spawn.admin:
+    description: Set the global spawn point
+    default: op
+  ultrascore.spawn.use:
+    description: Use /spawn
+    default: true
+  ultrascore.settings.use:
+    description: Open the personal settings GUI
+    default: true
+  ultrascore.chat.use:
+    description: Toggle your own chat visibility
+    default: true
+  ultrascore.pm.use:
+    description: Send and receive private messages
+    default: true
+  ultrascore.broadcast:
+    description: Use /bc and /broadcast
+    default: op
+  ultrascore.visibility.use:
+    description: Use /hide, /hideplayers, /showplayers
+    default: true
+  ultrascore.names.use:
+    description: Use /names
+    default: true
+  ultrascore.ranks.use:
+    description: Use /ranks
+    default: true
+  ultrascore.nightvision.use:
+    description: Use /nv
+    default: true
+  ultrascore.hub.use:
+    description: Use /hub
+    default: true
+  ultrascore.hub.admin:
+    description: Set the hub location
+    default: op
