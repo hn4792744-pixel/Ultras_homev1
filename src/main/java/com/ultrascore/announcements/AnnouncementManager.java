@@ -9,6 +9,8 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
+import org.bukkit.Registry;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 
 import java.time.Duration;
@@ -54,7 +56,8 @@ public class AnnouncementManager {
 
             if (soundName != null && !soundName.isBlank()) {
                 try {
-                    player.playSound(player.getLocation(), Sound.valueOf(soundName), 1f, 1f);
+                    Sound sound = Registry.SOUNDS.get(NamespacedKey.minecraft(soundName.toLowerCase()));
+                    if (sound != null) player.playSound(player.getLocation(), sound, 1f, 1f);
                 } catch (IllegalArgumentException ignored) {}
             }
         }

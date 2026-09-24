@@ -6,6 +6,8 @@ import com.ultrascore.settings.SettingsManager;
 import com.ultrascore.utils.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
+import org.bukkit.Registry;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -62,7 +64,7 @@ public class JoinLeaveDeathListener implements Listener {
             if (!settings.get(viewer.getUniqueId(), SettingKey.DEATH_MESSAGES)) continue;
             if (sound != null) {
                 try {
-                    viewer.playSound(viewer.getLocation(), Sound.valueOf(sound), 0.6f, 1f);
+                    viewer.playSound(viewer.getLocation(), Registry.SOUNDS.get(NamespacedKey.minecraft(sound.toLowerCase())), 0.6f, 1f);
                 } catch (IllegalArgumentException ignored) {}
             }
         }
@@ -82,7 +84,7 @@ public class JoinLeaveDeathListener implements Listener {
             viewer.sendMessage(component);
             if (soundName != null) {
                 try {
-                    viewer.playSound(viewer.getLocation(), Sound.valueOf(soundName), 0.6f, 1f);
+                    viewer.playSound(viewer.getLocation(), Registry.SOUNDS.get(NamespacedKey.minecraft(soundName.toLowerCase())), 0.6f, 1f);
                 } catch (IllegalArgumentException ignored) {}
             }
         }

@@ -6,6 +6,8 @@ import com.ultrascore.utils.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.Registry;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
@@ -67,7 +69,8 @@ public class CustomGui implements UltrasGui {
 
         if (button.sound != null) {
             try {
-                player.playSound(player.getLocation(), Sound.valueOf(button.sound), 1f, 1f);
+                Sound sound = Registry.SOUNDS.get(NamespacedKey.minecraft(button.sound.toLowerCase()));
+                if (sound != null) player.playSound(player.getLocation(), sound, 1f, 1f);
             } catch (IllegalArgumentException ignored) {}
         }
 

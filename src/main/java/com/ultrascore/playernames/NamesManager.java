@@ -62,7 +62,7 @@ public class NamesManager {
         }
         if (team == null) {
             team = sb.registerNewTeam(TEAM_NAME);
-            team.nameTagVisibility(NameTagVisibility.NEVER);
+            team.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.NEVER);
         }
         for (Player other : Bukkit.getOnlinePlayers()) {
             if (!other.equals(viewer) && !team.hasEntry(other.getName())) {

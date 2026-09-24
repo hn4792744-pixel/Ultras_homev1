@@ -121,7 +121,7 @@ public final class UltrasCore extends JavaPlugin {
 
         ScoreboardTabGuard.check(this);
 
-        logManager.info("core", "UltrasCore enabled (" + getDescription().getVersion() + ").");
+        logManager.info("core", "UltrasCore enabled (" + getPluginMeta().getVersion() + ").");
     }
 
     @Override

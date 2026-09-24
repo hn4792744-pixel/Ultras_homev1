@@ -107,3 +107,4 @@ public class ConfigManager {
             plugin.getLogManager().warn("core", path + " is negative (" + value + ") in config.yml — this is almost certainly a typo.");
         }
     }
+}

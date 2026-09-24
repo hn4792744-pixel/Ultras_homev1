@@ -22,7 +22,7 @@ public class UltrasCoreCommand implements CommandExecutor {
         }
 
         if (args.length == 0 || args[0].equalsIgnoreCase("help")) {
-            MessageUtil.send(sender, "<gradient:#ff0000:#8a0000><bold>UltrasCore</bold></gradient> <gray>v" + plugin.getDescription().getVersion());
+            MessageUtil.send(sender, "<gradient:#ff0000:#8a0000><bold>UltrasCore</bold></gradient> <gray>v" + plugin.getPluginMeta().getVersion());
             MessageUtil.send(sender, "<gray>/tpa, /tpahere <white>— teleport requests");
             MessageUtil.send(sender, "<gray>/home, /homes, /sethome, /delhome <white>— homes");
             MessageUtil.send(sender, "<gray>/home_admin, /uc_home <white>— homes administration");

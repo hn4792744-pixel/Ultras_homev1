@@ -4,6 +4,8 @@ import com.ultrascore.core.UltrasCore;
 import com.ultrascore.utils.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
+import org.bukkit.Registry;
+import org.bukkit.NamespacedKey;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -208,7 +210,8 @@ public class WarpManager {
         String name = plugin.getConfigManager().getString("systems.warps.sounds.teleport-success", null);
         if (name == null) return;
         try {
-            player.playSound(player.getLocation(), Sound.valueOf(name), 1f, 1f);
+            Sound sound = Registry.SOUNDS.get(NamespacedKey.minecraft(name.toLowerCase()));
+            if (sound != null) player.playSound(player.getLocation(), sound, 1f, 1f);
         } catch (IllegalArgumentException ignored) {
             // Invalid sound name in config — skip rather than throw.
         }

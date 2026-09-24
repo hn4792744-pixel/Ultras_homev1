@@ -4,6 +4,8 @@ import com.ultrascore.core.UltrasCore;
 import com.ultrascore.utils.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
+import org.bukkit.Registry;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 
 import java.util.Map;
@@ -184,7 +186,8 @@ public class TPAManager {
         String name = plugin.getConfigManager().getString("systems.tpa.sounds." + key, null);
         if (name == null) return;
         try {
-            player.playSound(player.getLocation(), Sound.valueOf(name), 1f, 1f);
+            Sound sound = Registry.SOUNDS.get(NamespacedKey.minecraft(name.toLowerCase()));
+            if (sound != null) player.playSound(player.getLocation(), sound, 1f, 1f);
         } catch (IllegalArgumentException ignored) {
             // Invalid sound name in config — silently skip rather than throw.
         }
